@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meesho Payment Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    .container { max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+    h2 { text-align: center; }
+    button { margin-top: 15px; padding: 10px; width: 100%; border: none; border-radius: 5px; cursor: pointer; }
+    .cod { background-color: #f0ad4e; color: white; }
+    .gpay { background-color: #4285f4; color: white; }
+    .success { background-color: #5cb85c; color: white; }
+    #message { margin-top: 20px; font-weight: bold; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Checkout</h2>
+    <p>Selected Payment Method: <strong id="method">Cash on Delivery (COD)</strong></p>
+    <button class="gpay" onclick="switchToGPay()">Switch to GPay</button>
+    <button class="cod" onclick="keepCOD()">Keep COD</button>
+    <div id="message"></div>
+  </div>
+
+  <script>
+    function switchToGPay() {
+      document.getElementById("method").innerText = "Google Pay (GPay)";
+      document.getElementById("message").innerHTML = "<p style='color:green;'>Payment successful via GPay ✅</p>";
+    }
+
+    function keepCOD() {
+      document.getElementById("message").innerHTML = "<p style='color:orange;'>Order confirmed with COD 💵</p>";
+    }
+  </script>
+</body>
+</html>
